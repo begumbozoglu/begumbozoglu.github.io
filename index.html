@@ -1,95 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Begüm Bozoğlu | Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            scroll-behavior: smooth;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #fff;
-            padding: 10px 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        header, section, footer {
-            padding: 80px 20px;
-            text-align: center;
-        }
-        header {
-            background: #f9f9f9;
-        }
-        section:nth-child(even) {
-            background: #f2f2f2;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        footer {
-            font-size: 14px;
-            color: #666;
-            background: #f9f9f9;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Begüm Bozoğlu | Portfolio</title>
+  <style>
+    :root {
+      --primary: #7E57C2;
+      --accent: #FFD54F;
+      --bg: #F3F4F6;
+      --text: #333;
+      --section-bg: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--section-bg);
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    header, section, footer {
+      padding: 100px 20px 80px;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(135deg, #7E57C2, #9575CD);
+      color: white;
+    }
+
+    section:nth-child(even) {
+      background-color: var(--section-bg);
+    }
+
+    section:nth-child(odd) {
+      background-color: #EDE7F6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #5E35B1;
+    }
+
+    .project {
+      margin: 20px 0;
+    }
+
+    .project h4 {
+      margin: 10px 0 5px;
+      color: var(--primary);
+    }
+
+    .project p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+
+    footer {
+      font-size: 14px;
+      color: #777;
+      background: #F3F4F6;
+    }
+  </style>
 </head>
 <body>
 
 <nav>
-    <a href="#about">About Me</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
+  <a href="#about">About Me</a>
+  <a href="#projects">Projects</a>
+  <a href="#cv">CV</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <header>
-    <h1>Begüm Bozoğlu</h1>
-    <p>Data Analyst</p>
-    <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank">LinkedIn Profile</a>
+  <h1>Begüm Bozoğlu</h1>
+  <p>Business Analyst | Data Enthusiast | Open to Global Roles</p>
+  <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank" class="btn">LinkedIn Profile</a>
 </header>
 
 <section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am a detail-oriented and analytical business analyst with over 4 years of experience in the banking and finance industry.
-        My focus is on data-driven decision making, regulatory reporting, and optimizing business processes.
-        I am passionate about building efficient solutions and continuously learning new technologies to improve outcomes.
-        I am currently seeking international opportunities to broaden my experience and contribute to impactful projects.
-    </p>
+  <h2>About Me</h2>
+  <p>
+    I'm a detail-oriented business analyst with over 4 years of experience in banking and finance. I specialize in regulatory reporting,
+    process optimization, and data analysis. I'm eager to contribute to international projects and continuously grow in the tech world.
+  </p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h4>Legal Reporting Automation</h4>
+    <p>Automated daily and monthly MASAK reports with status tracking and correction file handling for financial institutions.</p>
+  </div>
+
+  <div class="project">
+    <h4>Data Warehouse Migration</h4>
+    <p>Led the analysis and validation phase during the transformation of source systems into a centralized DWH for regulatory reports.</p>
+  </div>
+
+  <div class="project">
+    <h4>Swift Transaction Audits</h4>
+    <p>Created source models, procedures, and archive handling for SWIFT-based Import & Export transaction reporting.</p>
+  </div>
+
+  <!-- Daha fazla proje eklemek istersen buraya yazabilirim -->
 </section>
 
 <section id="cv">
-    <h2>CV</h2>
-    <p>You can download my CV here:</p>
-    <a class="btn" href="Begum_Bozoglu_Resume.pdf" target="_blank">Download CV</a>
+  <h2>CV</h2>
+  <p>You can download my resume here:</p>
+  <a class="btn" href="Begum_Bozoglu_Resume.pdf" target="_blank">Download CV</a>
 </section>
 
 <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: begumbozoglu@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank">begumbozoglu</a></p>
+  <h2>Contact</h2>
+  <p>Email: begumbozoglu@gmail.com</p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank">begumbozoglu</a></p>
 </section>
 
 <footer>
-    © 2025 Begüm Bozoğlu. All rights reserved.
+  © 2025 Begüm Bozoğlu. All rights reserved.
 </footer>
 
 </body>
