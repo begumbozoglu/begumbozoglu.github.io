@@ -1,104 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Begüm Bozoğlu | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      padding: 2rem;
-      text-align: center;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    header h1 {
-      font-size: 2rem;
-      font-weight: 600;
-    }
-    nav {
-      margin-top: 1rem;
-    }
-    nav a {
-      margin: 0 1rem;
-      color: #0073b1;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .project-card h3 {
-      margin-bottom: 0.5rem;
-    }
-    .project-card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #0073b1;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Begüm Bozoğlu | Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        header, section, footer {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        header {
+            background: #f9f9f9;
+        }
+        section:nth-child(even) {
+            background: #f2f2f2;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        footer {
+            font-size: 14px;
+            color: #666;
+            background: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
-  <header>
+
+<nav>
+    <a href="#about">About Me</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header>
     <h1>Begüm Bozoğlu</h1>
-    <nav>
-      <a href="#portfolio">Portfolio</a>
-      <a href="Begum_Bozoglu_Resume.pdf" download>Download CV</a>
-      <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank">LinkedIn</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <p>Data Analyst</p>
+    <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank">LinkedIn Profile</a>
+</header>
 
-  <section id="portfolio">
-    <h2>Selected Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Miuulib</h3>
-        <p>Open-source data analysis library developed to support students in Turkish with customizable data profiling features.</p>
-        <a href="https://github.com/miuul/miuulib" target="_blank">View on GitHub</a>
-      </div>
-      <!-- Add more project cards as needed -->
-    </div>
-  </section>
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a detail-oriented and analytical business analyst with over 4 years of experience in the banking and finance industry.
+        My focus is on data-driven decision making, regulatory reporting, and optimizing business processes.
+        I am passionate about building efficient solutions and continuously learning new technologies to improve outcomes.
+        I am currently seeking international opportunities to broaden my experience and contribute to impactful projects.
+    </p>
+</section>
 
-  <section id="contact">
+<section id="cv">
+    <h2>CV</h2>
+    <p>You can download my CV here:</p>
+    <a class="btn" href="Begum_Bozoglu_Resume.pdf" target="_blank">Download CV</a>
+</section>
+
+<section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:begumbozoglu@gmail.com">begumbozoglu@gmail.com</a></p>
-    <p><a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank">LinkedIn</a> | <a href="https://github.com/yourusername" target="_blank">GitHub</a></p>
-  </section>
+    <p>Email: begumbozoglu@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank">begumbozoglu</a></p>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Begüm Bozoğlu. All rights reserved.</p>
-  </footer>
+<footer>
+    © 2025 Begüm Bozoğlu. All rights reserved.
+</footer>
+
 </body>
 </html>
