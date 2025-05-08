@@ -55,6 +55,13 @@
       color: white;
     }
 
+    header img {
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
     section:nth-child(even) {
       background-color: var(--section-bg);
     }
@@ -126,6 +133,7 @@
 </nav>
 
 <header>
+  <img src="images/profile.jpeg" alt="Begüm Bozoğlu">
   <h1>Begüm Bozoğlu</h1>
   <p>Business Analyst | Data Enthusiast | Open to Global Roles</p>
   <div class="social-icons">
@@ -138,15 +146,17 @@
 <section id="about">
   <h2>About Me</h2>
   <p>
-    I'm a detail-oriented business analyst with over 4 years of experience in banking and finance. I specialize in regulatory reporting,
-    process optimization, and data analysis. I'm eager to contribute to international projects and continuously grow in the tech world.
+    I'm a data-driven Business Analyst with over 4 years of experience in financial services, regulatory reporting, and business intelligence.
+    My background includes designing and automating dashboards, optimizing KPIs, and leading cloud migration efforts at companies like Booking.com and Intertech.
+    I enjoy solving complex problems, collaborating with cross-functional teams, and mentoring others in analytics and data science.
+    I'm currently looking for international roles where I can grow, contribute, and be challenged by exciting real-world data projects.
   </p>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
   <div id="project-list">
-    <!-- GitHub projeleri buraya dinamik olarak yüklenecek -->
+    <!-- GitHub projects will be loaded here -->
   </div>
 </section>
 
@@ -157,8 +167,8 @@
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p>Would you like to work with me? Awesome!</p>
+  <h2>Let's Talk</h2>
+  <p>If you'd like to work with me or just say hi, feel free to drop me an email.</p>
   <p>Email: <a href="mailto:begumbozoglu@gmail.com">begumbozoglu@gmail.com</a></p>
 </section>
 
@@ -172,26 +182,27 @@
 </footer>
 
 <script>
-  // GitHub API'den projeleri çekme ve filtreleme
+  // GitHub API'den projeleri çek (bazılarını filtrele)
   fetch('https://api.github.com/users/begumbozoglu/repos')
-    .then(response => response.json())
-    .then(repos => {
-      const projectList = document.getElementById('project-list');
-      repos
-        .filter(repo => !['exercise', 'begumbozoglu'].includes(repo.name.toLowerCase()))
-        .forEach(repo => {
-          const project = document.createElement('div');
-          project.classList.add('project');
-          project.innerHTML = `
-            <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
-            <p>${repo.description || 'No description available.'}</p>
-          `;
-          projectList.appendChild(project);
-        });
+    .then(res => res.json())
+    .then(data => {
+      const filtered = data.filter(repo =>
+        repo.name.toLowerCase() !== 'exercise' &&
+        repo.name.toLowerCase() !== 'begumbozoglu'
+      );
+
+      const list = document.getElementById('project-list');
+      filtered.forEach(repo => {
+        const div = document.createElement('div');
+        div.className = 'project';
+        div.innerHTML = `
+          <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
+          <p>${repo.description || 'No description available.'}</p>
+        `;
+        list.appendChild(div);
+      });
     })
-    .catch(error => {
-      console.error('Error fetching GitHub repositories:', error);
-    });
+    .catch(err => console.error(err));
 </script>
 
 </body>
