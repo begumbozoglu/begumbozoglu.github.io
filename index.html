@@ -6,6 +6,10 @@
   <title>Begüm Bozoğlu | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- AOS Animasyon Kütüphanesi -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
   <style>
     :root {
       --primary: #7E57C2;
@@ -150,7 +154,7 @@
 <header>
   <img src="images/profile.jpeg" alt="Begüm Bozoğlu" />
   <h1>Begüm Bozoğlu</h1>
-  <p>Business Analyst · Data Enthusiast · Open to Global Roles</p>
+  <p>Senior Data Analyst · Data Enthusiast · Open to Global Roles</p>
   <div class="social-icons">
     <a href="https://linkedin.com/in/begumbozoglu" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://github.com/begumbozoglu" target="_blank"><i class="fab fa-github"></i></a>
@@ -159,7 +163,7 @@
   <a class="btn" href="Begum_Bozoglu_Resume.pdf" download>Resume</a>
 </header>
 
-<section id="about">
+<section id="about" data-aos="fade-up">
   <h2>About Me</h2>
   <p>
     I'm a detail-oriented Business Analyst with 4+ years of experience in banking and financial services. I specialize in data-driven decision making, regulatory reporting (MASAK), and designing dashboards in Tableau and Power BI.
@@ -168,20 +172,20 @@
   </p>
 </section>
 
-<section id="projects">
+<section id="projects" data-aos="fade-up">
   <h2>Projects</h2>
   <div id="project-list">
     <!-- GitHub projects will appear here -->
   </div>
 </section>
 
-<section id="cv">
+<section id="cv" data-aos="fade-up">
   <h2>Resume</h2>
   <p>You can download my resume here:</p>
   <a class="btn" href="Begum_Bozoglu_Resume.pdf" download>Resume</a>
 </section>
 
-<section id="contact">
+<section id="contact" data-aos="fade-up">
   <div>
     <img src="images/contact-illustration.png" alt="Let's Talk" />
   </div>
@@ -199,7 +203,10 @@
   <p>© 2025 Begüm Bozoğlu</p>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  AOS.init();
+
   fetch('https://api.github.com/users/begumbozoglu/repos')
     .then(res => res.json())
     .then(data => {
