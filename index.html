@@ -131,6 +131,7 @@
   <div class="social-icons">
     <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://github.com/begumbozoglu" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://medium.com/@begumbozoglu" target="_blank"><i class="fab fa-medium"></i></a>
   </div>
 </header>
 
@@ -157,29 +158,36 @@
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: begumbozoglu@gmail.com</p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank">begumbozoglu</a></p>
+  <p>Would you like to work with me? Awesome!</p>
+  <p>Email: <a href="mailto:begumbozoglu@gmail.com">begumbozoglu@gmail.com</a></p>
 </section>
 
 <footer>
-  © 2025 Begüm Bozoğlu. All rights reserved.
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/begumbozoglu" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://medium.com/@begumbozoglu" target="_blank"><i class="fab fa-medium"></i></a>
+  </div>
+  <p>© 2025 Begüm Bozoğlu. All rights reserved.</p>
 </footer>
 
 <script>
-  // GitHub API'den projeleri çekme
+  // GitHub API'den projeleri çekme ve filtreleme
   fetch('https://api.github.com/users/begumbozoglu/repos')
     .then(response => response.json())
     .then(repos => {
       const projectList = document.getElementById('project-list');
-      repos.forEach(repo => {
-        const project = document.createElement('div');
-        project.classList.add('project');
-        project.innerHTML = `
-          <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
-          <p>${repo.description || 'No description available.'}</p>
-        `;
-        projectList.appendChild(project);
-      });
+      repos
+        .filter(repo => !['exercise', 'begumbozoglu'].includes(repo.name.toLowerCase()))
+        .forEach(repo => {
+          const project = document.createElement('div');
+          project.classList.add('project');
+          project.innerHTML = `
+            <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
+            <p>${repo.description || 'No description available.'}</p>
+          `;
+          projectList.appendChild(project);
+        });
     })
     .catch(error => {
       console.error('Error fetching GitHub repositories:', error);
