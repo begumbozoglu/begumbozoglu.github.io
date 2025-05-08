@@ -5,19 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Begüm Bozoğlu | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --primary: #7E57C2;
       --accent: #9575CD;
-      --bg: #F3F4F6;
-      --text: #333;
-      --section-bg: #FFFFFF;
+      --bg: #F9F9FB;
+      --text: #2d2d2d;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: var(--bg);
+      padding: 0;
+      background: var(--bg);
       color: var(--text);
       scroll-behavior: smooth;
     }
@@ -26,177 +27,191 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: var(--section-bg);
-      padding: 15px 0;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 15px;
       z-index: 1000;
+      text-align: center;
     }
 
     nav a {
-      margin: 0 20px;
+      margin: 0 15px;
       text-decoration: none;
       color: var(--primary);
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    header, section, footer {
-      padding: 100px 20px 80px;
-      text-align: center;
+      font-weight: 600;
     }
 
     header {
+      text-align: center;
+      padding: 100px 20px 60px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       color: white;
     }
 
     header img {
-      width: 150px;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       margin-bottom: 20px;
-    }
-
-    section:nth-child(even) {
-      background-color: var(--section-bg);
-    }
-
-    section:nth-child(odd) {
-      background-color: #EDE7F6;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
-      background-color: var(--primary);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #5E35B1;
-    }
-
-    .project {
-      margin: 20px 0;
-    }
-
-    .project h4 {
-      margin: 10px 0 5px;
-      color: var(--primary);
-    }
-
-    .project p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 15px;
-    }
-
-    .social-icons {
-      margin-top: 20px;
     }
 
     .social-icons a {
       margin: 0 10px;
-      color: var(--primary);
-      font-size: 24px;
-      transition: color 0.3s ease;
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s;
     }
 
     .social-icons a:hover {
-      color: var(--accent);
+      color: #e0d7ff;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 24px;
+      background: white;
+      color: var(--primary);
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #eee;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    #projects .project {
+      background: white;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    #projects .project h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    #contact {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    #contact img {
+      max-width: 300px;
+      border-radius: 12px;
+    }
+
+    #contact .info {
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-weight: 600;
     }
 
     footer {
-      font-size: 14px;
-      color: #777;
-      background: #F3F4F6;
+      text-align: center;
+      background: white;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      #contact {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <a href="#about">About Me</a>
+  <a href="#about">About</a>
   <a href="#projects">Projects</a>
-  <a href="#cv">CV</a>
-  <a href="#contact">Contact</a>
+  <a href="#cv">Resume</a>
+  <a href="#contact">Let's Talk</a>
 </nav>
 
 <header>
-  <img src="images/profile.jpeg" alt="Begüm Bozoğlu">
+  <img src="images/profile.jpeg" alt="Begüm Bozoğlu" />
   <h1>Begüm Bozoğlu</h1>
-  <p>Data Analyst | Data Enthusiast | Open to Global Roles</p>
+  <p>Business Analyst · Data Enthusiast · Open to Global Roles</p>
   <div class="social-icons">
-    <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://linkedin.com/in/begumbozoglu" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://github.com/begumbozoglu" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://medium.com/@begumbozoglu" target="_blank"><i class="fab fa-medium"></i></a>
   </div>
+  <a class="btn" href="Begum_Bozoglu_Resume.pdf" download>Resume</a>
 </header>
 
 <section id="about">
   <h2>About Me</h2>
   <p>
-    I'm a data-driven Business Analyst with over 4 years of experience in financial services, regulatory reporting, and business intelligence.
-    My background includes designing and automating dashboards, optimizing KPIs, and leading cloud migration efforts at companies like Booking.com and Intertech.
-    I enjoy solving complex problems, collaborating with cross-functional teams, and mentoring others in analytics and data science.
-    I'm currently looking for international roles where I can grow, contribute, and be challenged by exciting real-world data projects.
+    I'm a detail-oriented Business Analyst with 4+ years of experience in banking and financial services. I specialize in data-driven decision making, regulatory reporting (MASAK), and designing dashboards in Tableau and Power BI.
+    <br><br>
+    My skillset includes SQL, Python, cloud migration support, and cross-functional team collaboration. I take pride in creating clean, actionable insights and continuously learning modern data tools. I'm currently looking for global opportunities to bring impact through data storytelling and analysis.
   </p>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
   <div id="project-list">
-    <!-- GitHub projects will be loaded here -->
+    <!-- GitHub projects will appear here -->
   </div>
 </section>
 
 <section id="cv">
-  <h2>CV</h2>
+  <h2>Resume</h2>
   <p>You can download my resume here:</p>
-  <a class="btn" href="Begum_Bozoglu_Resume.pdf" target="_blank">Download CV</a>
+  <a class="btn" href="Begum_Bozoglu_Resume.pdf" download>Resume</a>
 </section>
 
 <section id="contact">
-  <h2>Let's Talk</h2>
-  <p>If you'd like to work with me or just say hi, feel free to drop me an email.</p>
-  <p>Email: <a href="mailto:begumbozoglu@gmail.com">begumbozoglu@gmail.com</a></p>
+  <div>
+    <img src="images/contact-illustration.png" alt="Let's Talk" />
+  </div>
+  <div class="info">
+    begumbozoglu1998@gmail.com
+  </div>
 </section>
 
 <footer>
   <div class="social-icons">
-    <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://linkedin.com/in/begumbozoglu" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://github.com/begumbozoglu" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://medium.com/@begumbozoglu" target="_blank"><i class="fab fa-medium"></i></a>
   </div>
-  <p>© 2025 Begüm Bozoğlu. All rights reserved.</p>
+  <p>© 2025 Begüm Bozoğlu</p>
 </footer>
 
 <script>
-  // GitHub API'den projeleri çek (bazılarını filtrele)
   fetch('https://api.github.com/users/begumbozoglu/repos')
     .then(res => res.json())
     .then(data => {
       const filtered = data.filter(repo =>
-        repo.name.toLowerCase() !== 'exercise' &&
-        repo.name.toLowerCase() !== 'begumbozoglu'
+        !['exercise', 'begumbozoglu'].includes(repo.name.toLowerCase())
       );
-
       const list = document.getElementById('project-list');
       filtered.forEach(repo => {
         const div = document.createElement('div');
         div.className = 'project';
         div.innerHTML = `
-          <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
+          <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
           <p>${repo.description || 'No description available.'}</p>
         `;
         list.appendChild(div);
