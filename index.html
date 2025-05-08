@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Begüm Bozoğlu | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --primary: #7E57C2;
-      --accent: #FFD54F;
+      --accent: #9575CD;
       --bg: #F3F4F6;
       --text: #333;
       --section-bg: #FFFFFF;
@@ -50,7 +51,7 @@
     }
 
     header {
-      background: linear-gradient(135deg, #7E57C2, #9575CD);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       color: white;
     }
 
@@ -93,6 +94,21 @@
       font-size: 15px;
     }
 
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: var(--primary);
+      font-size: 24px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+    }
+
     footer {
       font-size: 14px;
       color: #777;
@@ -111,8 +127,11 @@
 
 <header>
   <h1>Begüm Bozoğlu</h1>
-  <p>Data Analyst | Data Enthusiast | Open to Global Roles</p>
-  <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank" class="btn">LinkedIn Profile</a>
+  <p>Business Analyst | Data Enthusiast | Open to Global Roles</p>
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/begumbozoglu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/begumbozoglu" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
 </header>
 
 <section id="about">
@@ -125,23 +144,9 @@
 
 <section id="projects">
   <h2>Projects</h2>
-
-  <div class="project">
-    <h4>Legal Reporting Automation</h4>
-    <p>Automated daily and monthly MASAK reports with status tracking and correction file handling for financial institutions.</p>
+  <div id="project-list">
+    <!-- GitHub projeleri buraya dinamik olarak yüklenecek -->
   </div>
-
-  <div class="project">
-    <h4>Data Warehouse Migration</h4>
-    <p>Led the analysis and validation phase during the transformation of source systems into a centralized DWH for regulatory reports.</p>
-  </div>
-
-  <div class="project">
-    <h4>Swift Transaction Audits</h4>
-    <p>Created source models, procedures, and archive handling for SWIFT-based Import & Export transaction reporting.</p>
-  </div>
-
-  <!-- Daha fazla proje eklemek istersen buraya yazabilirim -->
 </section>
 
 <section id="cv">
@@ -159,6 +164,27 @@
 <footer>
   © 2025 Begüm Bozoğlu. All rights reserved.
 </footer>
+
+<script>
+  // GitHub API'den projeleri çekme
+  fetch('https://api.github.com/users/begumbozoglu/repos')
+    .then(response => response.json())
+    .then(repos => {
+      const projectList = document.getElementById('project-list');
+      repos.forEach(repo => {
+        const project = document.createElement('div');
+        project.classList.add('project');
+        project.innerHTML = `
+          <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
+          <p>${repo.description || 'No description available.'}</p>
+        `;
+        projectList.appendChild(project);
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching GitHub repositories:', error);
+    });
+</script>
 
 </body>
 </html>
